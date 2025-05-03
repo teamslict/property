@@ -1,0 +1,12 @@
+name = "slict-property-frontend"
+main = "index.html"
+compatibility_date = "2023-01-01"
+
+# Production environment configuration
+[env.production]
+[[env.production.routes]]
+pattern = "property.slict.lk"
+custom_domain = true
+
+[site]
+bucket = "./" 

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLICT Property - Buy & Sell Properties in Colombo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#2c5282',
+                        accent: '#4299e1',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-primary text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-building text-2xl"></i>
+                <span class="text-xl font-bold">SLICT Property</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-accent transition">Home</a>
+                <a href="#properties" class="hover:text-accent transition">Properties</a>
+                <a href="#sell" class="hover:text-accent transition">Sell Property</a>
+                <a href="#contact" class="hover:text-accent transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary px-4 pb-4">
+            <a href="#home" class="block py-2 hover:text-accent transition">Home</a>
+            <a href="#properties" class="block py-2 hover:text-accent transition">Properties</a>
+            <a href="#sell" class="block py-2 hover:text-accent transition">Sell Property</a>
+            <a href="#contact" class="block py-2 hover:text-accent transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-secondary text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Find Your Dream Property in Colombo</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">SLICT Property offers the best selection of residential and commercial properties in Sri Lanka's capital.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#properties" class="bg-accent hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition">Browse Properties</a>
+                <a href="#sell" class="bg-white hover:bg-gray-200 text-primary font-bold py-3 px-6 rounded-lg transition">List Your Property</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="properties" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Featured Properties</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Luxury Villa" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded">FOR SALE</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Luxury Villa in Colombo 7</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-accent mr-2"></i> Colombo 07, Sri Lanka</p>
+                        <div class="flex justify-between text-sm mb-4">
+                            <span><i class="fas fa-bed text-accent mr-1"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath text-accent mr-1"></i> 4 Baths</span>
+                            <span><i class="fas fa-ruler-combined text-accent mr-1"></i> 3500 sq.ft</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">$450,000</span>
+                            <button class="bg-accent hover:bg-blue-600 text-white py-2 px-4 rounded transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Modern Apartment" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">FOR RENT</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Modern Apartment in Colombo 3</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-accent mr-2"></i> Colombo 03, Sri Lanka</p>
+                        <div class="flex justify-between text-sm mb-4">
+                            <span><i class="fas fa-bed text-accent mr-1"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath text-accent mr-1"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined text-accent mr-1"></i> 1800 sq.ft</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">$1,200/mo</span>
+                            <button class="bg-accent hover:bg-blue-600 text-white py-2 px-4 rounded transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Commercial Space" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded">FOR SALE</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">Commercial Space in Colombo 1</h3>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-accent mr-2"></i> Colombo 01, Sri Lanka</p>
+                        <div class="flex justify-between text-sm mb-4">
+                            <span><i class="fas fa-building text-accent mr-1"></i> Office</span>
+                            <span><i class="fas fa-door-open text-accent mr-1"></i> 5 Rooms</span>
+                            <span><i class="fas fa-ruler-combined text-accent mr-1"></i> 2500 sq.ft</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-primary">$320,000</span>
+                            <button class="bg-accent hover:bg-blue-600 text-white py-2 px-4 rounded transition">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-primary hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-lg transition">View All Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sell Property Form -->
+    <section id="sell" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Sell Your Property</h2>
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-8">
+                <form id="propertyForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="propertyType" class="block text-gray-700 font-medium mb-2">Property Type</label>
+                            <select id="propertyType" name="propertyType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                                <option value="">Select Property Type</option>
+                                <option value="House">House</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="Land">Land</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="address" class="block text-gray-700 font-medium mb-2">Property Address</label>
+                        <input type="text" id="address" name="address" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label for="bedrooms" class="block text-gray-700 font-medium mb-2">Bedrooms</label>
+                            <input type="number" id="bedrooms" name="bedrooms" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="bathrooms" class="block text-gray-700 font-medium mb-2">Bathrooms</label>
+                            <input type="number" id="bathrooms" name="bathrooms" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="area" class="block text-gray-700 font-medium mb-2">Area (sq.ft)</label>
+                            <input type="number" id="area" name="area" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="price" class="block text-gray-700 font-medium mb-2">Asking Price (LKR)</label>
+                            <input type="number" id="price" name="price" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="listingType" class="block text-gray-700 font-medium mb-2">Listing Type</label>
+                            <select id="listingType" name="listingType" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                                <option value="">Select Listing Type</option>
+                                <option value="Sale">For Sale</option>
+                                <option value="Rent">For Rent</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="description" class="block text-gray-700 font-medium mb-2">Property Description</label>
+                        <textarea id="description" name="description" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+                    </div>
+                    <div>
+                        <label for="photos" class="block text-gray-700 font-medium mb-2">Upload Photos (Max 5MB each)</label>
+                        <input type="file" id="photos" name="photos" multiple accept="image/*" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="agree" name="agree" required class="w-4 h-4 text-accent rounded focus:ring-accent">
+                        <label for="agree" class="ml-2 text-gray-700">I agree to the <a href="#" class="text-accent hover:underline">terms and conditions</a></label>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-3 px-4 rounded-lg transition">
+                            Submit Property
+                        </button>
+                    </div>
+                </form>
+                <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                    <i class="fas fa-check-circle mr-2"></i> Your property has been submitted successfully! We'll contact you soon.
+                </div>
+                <div id="formError" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                    <i class="fas fa-exclamation-circle mr-2"></i> <span id="errorMessage">There was an error submitting your form. Please try again.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Get In Touch</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-accent mt-1 mr-3"></i>
+                            <p>K. Cyril C. Colombo, Sri Lanka, 01500</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-accent mr-3"></i>
+                            <a href="mailto:safra@slict.lk" class="hover:text-accent transition">safra@slict.lk</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-accent mr-3"></i>
+                            <a href="tel:+94752539988" class="hover:text-accent transition">+94 75 253 9988</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp text-accent mr-3"></i>
+                            <a href="https://wa.me/94752539988" class="hover:text-accent transition">WhatsApp: +94 75 253 9988</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-accent mr-3"></i>
+                            <a href="http://properties.slict.lk" target="_blank" class="hover:text-accent transition">properties.slict.lk</a>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="font-bold mb-2">Opening Hours</h4>
+                        <p>All day open except Friday 12pm to 2pm</p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Send Us a Message</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="contactName" class="block text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="contactName" name="contactName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="contactEmail" class="block text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="contactPhone" class="block text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="contactSubject" class="block text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="contactSubject" name="contactSubject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        <div>
+                            <label for="contactMessage" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-3 px-4 rounded-lg transition">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="contactSuccess" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully! We'll contact you soon.
+                    </div>
+                    <div id="contactError" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                        <i class="fas fa-exclamation-circle mr-2"></i> <span id="contactErrorMessage">There was an error sending your message. Please try again.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SLICT Property</h3>
+                    <p class="mb-4">Your trusted partner for buying and selling properties in Colombo, Sri Lanka.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-accent transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-accent transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-accent transition">Home</a></li>
+                        <li><a href="#properties" class="hover:text-accent transition">Properties</a></li>
+                        <li><a href="#sell" class="hover:text-accent transition">Sell Property</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="mb-4">Subscribe to our newsletter for the latest property updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-accent hover:bg-blue-600 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p>&copy; 2023 SLICT Property. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Apps Script for form submission -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Property Form Submission
+        document.getElementById('propertyForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Prepare form data
+                const formData = new FormData(this);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    property_type: formData.get('propertyType'),
+                    address: formData.get('address'),
+                    bedrooms: formData.get('bedrooms'),
+                    bathrooms: formData.get('bathrooms'),
+                    area: formData.get('area'),
+                    price: formData.get('price'),
+                    listing_type: formData.get('listingType'),
+                    description: formData.get('description')
+                };
+
+                // Submit to Cloudflare Worker API
+                const response = await fetch('https://properties.slict.lk/api/properties', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) throw new Error('Failed to submit property');
+
+                // Show success message
+                document.getElementById('formSuccess').classList.remove('hidden');
+                document.getElementById('formError').classList.add('hidden');
+                this.reset();
+            } catch (error) {
+                // Show error message
+                document.getElementById('errorMessage').textContent = error.message;
+                document.getElementById('formError').classList.remove('hidden');
+                document.getElementById('formSuccess').classList.add('hidden');
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Prepare form data
+                const formData = new FormData(this);
+                const data = {
+                    name: formData.get('contactName'),
+                    email: formData.get('contactEmail'),
+                    phone: formData.get('contactPhone'),
+                    subject: formData.get('contactSubject'),
+                    message: formData.get('contactMessage')
+                };
+
+                // Submit to Cloudflare Worker API
+                const response = await fetch('https://properties.slict.lk/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) throw new Error('Failed to send message');
+
+                // Show success message
+                document.getElementById('contactSuccess').classList.remove('hidden');
+                document.getElementById('contactError').classList.add('hidden');
+                this.reset();
+            } catch (error) {
+                // Show error message
+                document.getElementById('contactErrorMessage').textContent = error.message;
+                document.getElementById('contactError').classList.remove('hidden');
+                document.getElementById('contactSuccess').classList.add('hidden');
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Newsletter Form Submission
+        document.querySelector('footer form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const emailInput = this.querySelector('input[type="email"]');
+            const submitBtn = this.querySelector('button');
+            const originalBtnHtml = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+            
+            try {
+                const response = await fetch('https://properties.slict.lk/api/newsletter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: emailInput.value })
+                });
+
+                if (!response.ok) throw new Error('Failed to subscribe');
+
+                // Show success message
+                emailInput.value = '';
+                alert('Successfully subscribed to newsletter!');
+            } catch (error) {
+                alert('Failed to subscribe: ' + error.message);
+            } finally {
+                submitBtn.innerHTML = originalBtnHtml;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Load and display properties
+        async function loadProperties() {
+            try {
+                const response = await fetch('https://properties.slict.lk/api/properties');
+                if (!response.ok) throw new Error('Failed to fetch properties');
+                
+                const properties = await response.json();
+                const container = document.querySelector('#properties .grid');
+                
+                // Clear existing properties
+                container.innerHTML = '';
+                
+                // Add fetched properties
+                properties.forEach(property => {
+                    container.innerHTML += `
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                            <div class="relative">
+                                <img src="${property.photo_urls ? JSON.parse(property.photo_urls)[0] : 'https://via.placeholder.com/800x600'}" 
+                                     alt="${property.property_type}" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-${property.listing_type === 'Sale' ? 'primary' : 'green-600'} text-white text-xs font-bold px-2 py-1 rounded">
+                                    FOR ${property.listing_type.toUpperCase()}
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-xl font-bold mb-2">${property.property_type} in ${property.address}</h3>
+                                <p class="text-gray-600 mb-4">
+                                    <i class="fas fa-map-marker-alt text-accent mr-2"></i> ${property.address}
+                                </p>
+                                <div class="flex justify-between text-sm mb-4">
+                                    ${property.bedrooms ? `<span><i class="fas fa-bed text-accent mr-1"></i> ${property.bedrooms} Beds</span>` : ''}
+                                    ${property.bathrooms ? `<span><i class="fas fa-bath text-accent mr-1"></i> ${property.bathrooms} Baths</span>` : ''}
+                                    <span><i class="fas fa-ruler-combined text-accent mr-1"></i> ${property.area} sq.ft</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">
+                                        LKR ${property.price.toLocaleString()}${property.listing_type === 'Rent' ? '/mo' : ''}
+                                    </span>
+                                    <button class="bg-accent hover:bg-blue-600 text-white py-2 px-4 rounded transition">
+                                        View Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                console.error('Failed to load properties:', error);
+            }
+        }
+
+        // Load properties when page loads
+        document.addEventListener('DOMContentLoaded', loadProperties);
+    </script>
+</body>
+</html>

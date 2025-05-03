@@ -1,0 +1,21 @@
+name = "slict-property-production"
+main = "src/worker.js"
+compatibility_date = "2023-01-01"
+
+# Local development D1 database
+[[d1_databases]]
+binding = "DB"
+database_name = "slict_property_db_local"
+database_id = "66c6643d-8e2f-4d01-8100-92da8df707f0"
+migrations_dir = "migrations"
+
+# Production environment configuration
+[env.production]
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "slict_property_db"
+database_id = "032f2f79-593b-4d5d-9b23-a72b5a40dff9"
+
+[[env.production.routes]]
+pattern = "apiproperty.slict.lk"
+custom_domain = true
