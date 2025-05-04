@@ -9,4 +9,6 @@ pattern = "property.slict.lk"
 custom_domain = true
 
 [site]
-bucket = "./" 
+bucket = "./"
+
+wrangler pages deploy . --project-name=slict-property-frontend --branch=master
